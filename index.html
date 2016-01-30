@@ -7,6 +7,17 @@
 </head>
 <body>
 
+<style>
+    #wrapper {
+        overflow: hidden;
+    }
+
+    .reddit-wrap {
+        width: 33%;
+        float: left;
+    }
+</style>
+
 <script>
 
     $.getJSON(
@@ -25,8 +36,10 @@
                             var permalink = post.data.permalink;
 
 
-                            $("#wrapper").append( '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>");
-                            $("#wrapper").append("<p>" + permalink + "</p>");
+                            var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>" + "<p>" + permalink + "</p>"
+
+                            $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '</div>' );
+                            //$("#wrapper").append( itemContent );
 
 
 //                            $("#reddit-content").append( '<br>' + post.data.url );
