@@ -29,4 +29,7 @@ body {
 .block {
   display: block; }
 
+.item__img {
+  max-width: 140px; }
+
 /*# sourceMappingURL=style.css.map */
