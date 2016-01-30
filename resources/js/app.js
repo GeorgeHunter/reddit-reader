@@ -18,9 +18,16 @@ $.getJSON(
 
                 var preview = post.data.thumbnail;
 
-                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + preview + '">' + '</div>' );
-                //$("").append( '<img src="' + preview + '">' );
-                //console.log( preview );
+                var previewLogic = function() {
+                    if (preview === "self") {
+                        return "";
+                    } else {
+                        return preview;
+                    }
+                }
+
+
+                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + previewLogic() + '">' + '</div>' );
 
             }
         )
