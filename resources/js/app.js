@@ -16,7 +16,11 @@ $.getJSON(
 
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
 
-                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '</div>' );
+                var preview = post.data.thumbnail;
+
+                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + preview + '">' + '</div>' );
+                //$("").append( '<img src="' + preview + '">' );
+                //console.log( preview );
 
             }
         )
