@@ -8,15 +8,18 @@ $.getJSON(
 
                 // Content Variables
                 var postTitleContent = post.data.title;
+                var preview = post.data.thumbnail;
+
 
                 // Items for Inclusion
                 var postTitle = "<h1>" + postTitleContent + "</h1>";
                 var permalink = post.data.permalink;
-
-
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
+                var author = post.data.author;
 
-                var preview = post.data.thumbnail;
+
+                //var thumbnail = post.data.preview;
+
 
                 var previewLogic = function() {
                     if (preview === "self") {
@@ -27,7 +30,7 @@ $.getJSON(
                 }
 
 
-                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + previewLogic() + '">' + '</div>' );
+                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + previewLogic() + '" class="item__img">' + author + '</div>' );
 
             }
         )
