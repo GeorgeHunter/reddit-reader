@@ -2,11 +2,26 @@
   overflow: hidden;
 }
 
-.reddit-wrap {
+.item {
   width: 33%;
   float: left;
+  &:nth-child(4) {
+    clear: left;
+  }
+  &:nth-child(7) {
+    clear: left;
+  }
 }
 
-.item__img {
+h3 {
+  //font-size:;
+}
+
+.comment-link {
+  display: block;
+  color: red;
+}
+
+.block {
   display: block;
 }

@@ -12,11 +12,13 @@ $.getJSON(
 
 
                 // Items for Inclusion
-                var postTitle = "<h1>" + postTitleContent + "</h1>";
+                var postTitle = "<h3>" + postTitleContent + "</h3>";
                 var permalink = post.data.permalink;
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
+                var commentLink = '<a href="http://reddit.com' + permalink + '" class="block">' + "View the Comments" + "</a>";
                 var author = post.data.author;
 
+                console.log(post.data);
 
                 //var thumbnail = post.data.preview;
 
@@ -30,7 +32,7 @@ $.getJSON(
                 }
 
 
-                $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '<img src="' + previewLogic() + '" class="item__img">' + author + '</div>' );
+                $("#wrapper").append( '<div class="item">' + itemContent + '<img src="' + previewLogic() + '" class="block item__img">' + author + commentLink + '</div>' );
 
             }
         )

@@ -1,11 +1,19 @@
 #wrapper {
   overflow: hidden; }
 
-.reddit-wrap {
+.item {
   width: 33%;
   float: left; }
+  .item:nth-child(4) {
+    clear: left; }
+  .item:nth-child(7) {
+    clear: left; }
 
-.item__img {
+.comment-link {
+  display: block;
+  color: red; }
+
+.block {
   display: block; }
 
 /*# sourceMappingURL=style.css.map */
