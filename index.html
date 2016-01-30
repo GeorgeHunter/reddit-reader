@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Reddit Reader</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="resources/js/app.js"></script>
 </head>
 <body>
 
@@ -18,42 +19,7 @@
     }
 </style>
 
-<script>
 
-    $.getJSON(
-            "http://www.reddit.com/r/pics.json?jsonp=?",
-            function foo(data)
-            {
-                $.each(
-                        data.data.children.slice(0, 9),
-                        function (i, post) {
-
-                            // Content Variables
-                            var postTitleContent = post.data.title;
-
-                            // Items for Inclusion
-                            var postTitle = "<h1>" + postTitleContent + "</h1>";
-                            var permalink = post.data.permalink;
-
-
-                            var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>" + "<p>" + permalink + "</p>"
-
-                            $("#wrapper").append( '<div class="reddit-wrap">' + itemContent + '</div>' );
-                            //$("#wrapper").append( itemContent );
-
-
-//                            $("#reddit-content").append( '<br>' + post.data.url );
-//                            $("#reddit-content").append( '<br>' + post.data.permalink );
-//                            $("#reddit-content").append( '<br>' + post.data.ups );
-//                            $("#reddit-content").append( '<br>' + post.data.downs );
-//                            $("#reddit-content").append( '<hr>' );
-                        }
-                )
-            }
-            )
-
-
-</script>
 
 
 
