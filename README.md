@@ -1,2 +1,2 @@
 # reddit-reader
-Reddit App - push
+Reddit App
