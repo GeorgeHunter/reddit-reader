@@ -15,7 +15,7 @@ $.getJSON(
                 var postTitle = "<h3>" + postTitleContent + "</h3>";
                 var permalink = post.data.permalink;
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
-                var commentLink = '<a href="http://reddit.com' + permalink + '" class="block">' + "View the Comments" + "</a>";
+                var commentLink = '<a href="http://reddit.com' + permalink + '" class="block">' + "View the Comments " + "</a>";
                 var author = post.data.author;
 
                 console.log(post.data);
