@@ -9,14 +9,17 @@ $.getJSON(
                 // Content Variables
                 var postTitleContent = post.data.title;
                 var preview = post.data.thumbnail;
+                var url = post.data.ur;
+                var permalink = post.data.permalink;
+                var author = post.data.author;
+                var url = post.data.url;
+
 
 
                 // Items for Inclusion
                 var postTitle = "<h3>" + postTitleContent + "</h3>";
-                var permalink = post.data.permalink;
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
                 var commentLink = '<a href="http://reddit.com' + permalink + '" class="block">' + "View the Comments " + "</a>";
-                var author = post.data.author;
 
                 console.log(post.data);
 
@@ -31,8 +34,14 @@ $.getJSON(
                     }
                 }
 
+                var image = '<img src="' + previewLogic() + '" class="block item__img">';
+                var imageLinked = '<a href="' + url + '">' + image + "</a>";
 
-                $("#wrapper").append( '<div class="item">' + itemContent + '<img src="' + previewLogic() + '" class="block item__img">' + author + commentLink + '</div>' );
+
+
+
+
+                $("#wrapper").append( '<div class="item">' + itemContent + imageLinked + author + commentLink + '</div>' );
 
             }
         )
