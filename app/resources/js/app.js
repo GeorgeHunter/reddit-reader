@@ -38,7 +38,7 @@ $.getJSON(
                 var itemContent = '<a href="http://reddit.com' + permalink + '">' + postTitle + "</a>";
                 var commentLink = '<a href="http://reddit.com' + permalink + '" class="block">' + "View the Comments " + "</a>";
                 var imageLinked = '<a href="' + url + '">' + image + "</a>";
-                var authorLinked = '<a href="http://reddit.com/user/' + author + '">' + author + "</a>";
+                var authorLinked = '<a href="http://reddit.com/user/' + author + '" class="block">' + author + "</a>";
 
                 var lightThumb = '<img src="' + preview + '" class="show-' + ID +  '">';
                 var lightMain = '<img src="' + url + '" class="shown-' + ID +  '" style="display: none">';
