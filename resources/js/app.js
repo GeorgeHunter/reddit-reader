@@ -12,12 +12,10 @@ $.getJSON(
                 var permalink = post.data.permalink;
                 var author = post.data.author;
                 var url = post.data.url;
+                var domain = post.data.domain;
+                var ID = post.data.id;
 
 
-
-
-
-                console.log(post.data);
 
 
                 var previewLogic = function() {
@@ -27,6 +25,8 @@ $.getJSON(
                         return preview;
                     }
                 };
+
+
 
                 //Building Block
                 var image = '<img src="' + previewLogic() + '" class="block item__img">';
@@ -40,12 +40,33 @@ $.getJSON(
                 var imageLinked = '<a href="' + url + '">' + image + "</a>";
                 var authorLinked = '<a href="http://reddit.com/user/' + author + '">' + author + "</a>";
 
+                var lightThumb = '<img src="' + preview + '" class="show-' + ID +  '">';
+                var lightMain = '<img src="' + url + '" class="shown-' + ID +  '" style="display: none">';
+
+                var showClass = ".show-43d8ro";
+                var shownClass = ".shown-43d8ro";
+
+                console.log(showClass);
 
 
+                var lightBoxLogic = function() {
+                    if (domain === "i.imgur.com") {
+                        return lightThumb + lightMain;
+                    } else {
+                        return imageLinked;
+                    }
 
-                $("#wrapper").append( '<div class="item">' + itemContent + imageLinked + authorLinked + commentLink + '</div>' );
+                };
+
+                $(showClass).click(function() {
+                    console.log("showing");
+                    $(shownClass).toggle();
+                });
+
+
+                $("#wrapper").append( '<div class="item">' + itemContent + lightBoxLogic() + authorLinked + commentLink + '</div>' );
 
             }
         )
     }
-)
+);
